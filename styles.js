@@ -1,29 +1,28 @@
 import { StyleSheet, Platform } from 'react-native';
 
 export const styles = StyleSheet.create({
-  bg: {
+  container: {
     flex: 1,
   },
-  container: {
-    alignItems: 'center',
-    marginTop: 63,
-    paddingTop: 32,
+  bg: {
     flex: 1,
+    resizeMode: 'cover',
+    justifyContent: 'flex-end',
+  },
+  form: {
+    paddingTop: 32,
+    alignItems: 'center',
     width: '100%',
-    backgroundColor: '#fff',
+    backgroundColor: '#ffffff',
     backgroundColor: '#282c34',
     borderTopLeftRadius: 25,
     borderTopRightRadius: 25,
-    position: 'relative',
-  },
-  containerRegister: {
-    paddingTop: 92,
   },
   addPhoto: {
     width: 132,
     height: 120,
-    position: 'absolute',
-    top: -60,
+    marginTop: -92, //-60 figma templ - 32 compens form.padTop
+    marginBottom: 32,
   },
   regTitleWrapper: {
     marginBottom: 33,
@@ -44,6 +43,7 @@ export const styles = StyleSheet.create({
     height: 50,
     borderRadius: 8,
     backgroundColor: '#F6F6F6',
+    backgroundColor: '#c678dd',
     borderWidth: 1,
     borderColor: '#E8E8E8',
     paddingLeft: 16,

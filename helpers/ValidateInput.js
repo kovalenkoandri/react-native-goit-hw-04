@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Keyboard } from 'react-native';
 
 export const ValidateInput = () => {
   const [loginValue, setLoginValue] = useState('');
@@ -8,9 +9,10 @@ export const ValidateInput = () => {
   const inputLoginHandler = (text) => setLoginValue(text);
   const inputEmailHandler = (text) => setEmailValue(text);
   const inputPasswordHandler = (text) => setPasswordValue(text);
+  const keyboardHide = () => Keyboard.dismiss();
   const submitHandler = (creds) => console.log({ ...creds });
   const passHideHandler = (hidePass) => setHidePass(!hidePass);
-    return {
+  return {
     inputLoginHandler,
     inputEmailHandler,
     inputPasswordHandler,
@@ -20,5 +22,6 @@ export const ValidateInput = () => {
     passwordValue,
     emailValue,
     loginValue,
+    keyboardHide,
   };
 };
