@@ -3,6 +3,7 @@ import { StyleSheet, Platform } from 'react-native';
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
+    fontFamily: 'RobotoItalic',
   },
   bg: {
     flex: 1,
@@ -31,7 +32,7 @@ export const styles = StyleSheet.create({
     marginBottom: 33,
   },
   authTitle: {
-    fontFamily: 'Roboto',
+    fontFamily: 'RobotoItalic',
     fontSize: 30,
     lineHeight: 35,
     color: '#212121',
@@ -93,7 +94,7 @@ export const styles = StyleSheet.create({
     lineHeight: 19,
     letterSpacing: 0.25,
     color: '#1B4371',
-    fontFamily: 'Roboto',
+    fontFamily: 'RobotoItalic',
   },
   buttonAuth: {
     marginBottom: 16,
@@ -111,7 +112,7 @@ export const styles = StyleSheet.create({
     lineHeight: 19,
     letterSpacing: 0.25,
     color: '#fff',
-    fontFamily: 'Roboto',
+    fontFamily: 'RobotoItalic',
   },
   textRoute: {
     marginBottom: 90,
