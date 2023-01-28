@@ -9,7 +9,6 @@ export const ValidateInput = () => {
   const inputLoginHandler = (text) => setLoginValue(text);
   const inputEmailHandler = (text) => setEmailValue(text);
   const inputPasswordHandler = (text) => setPasswordValue(text);
-  const keyboardHide = () => Keyboard.dismiss();
   const submitHandler = (creds) => console.log({ ...creds });
   const passHideHandler = (hidePass) => setHidePass(!hidePass);
   return {
@@ -22,6 +21,5 @@ export const ValidateInput = () => {
     passwordValue,
     emailValue,
     loginValue,
-    keyboardHide,
   };
 };

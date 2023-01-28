@@ -8,7 +8,9 @@ import {
   Platform,
   KeyboardAvoidingView,
   TouchableWithoutFeedback,
+  Keyboard,
 } from 'react-native';
+import { useState } from 'react';
 import { styles } from '../styles';
 import { ValidateInput } from '../helpers/ValidateInput';
 import { CommonRegisterLogin } from '../helpers/CommonRegisterLogin';
@@ -22,13 +24,23 @@ export const RegistrationScreen = () => {
     passwordValue,
     emailValue,
     loginValue,
-    keyboardHide,
   } = ValidateInput();
+  const [isShowKeyboard, setIsShowKeyboard] = useState(false);
+  const keyboardHide = () => {
+    Keyboard.dismiss();
+    setIsShowKeyboard(false);
+  };
+
   return (
     <TouchableWithoutFeedback onPress={keyboardHide}>
       <View style={styles.container}>
         <ImageBackground style={styles.bg} source={require('../assets/bg.png')}>
-          <View style={styles.form}>
+          <View
+            style={{
+              ...styles.form,
+              marginBottom: isShowKeyboard ? -110 : 0,
+            }}
+          >
             <Image
               source={require('../assets/addPhoto.png')}
               style={styles.addPhoto}
@@ -41,6 +53,7 @@ export const RegistrationScreen = () => {
               value={loginValue}
               onChangeText={inputLoginHandler}
               style={styles.inputLogin}
+              onFocus={() => setIsShowKeyboard(true)}
             />
             <CommonRegisterLogin
               {...{
@@ -48,6 +61,7 @@ export const RegistrationScreen = () => {
                 emailValue,
                 inputEmailHandler,
                 inputPasswordHandler,
+                setIsShowKeyboard,
               }}
             >
               <TouchableOpacity

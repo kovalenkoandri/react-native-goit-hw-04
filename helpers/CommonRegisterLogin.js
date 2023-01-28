@@ -7,6 +7,7 @@ export const CommonRegisterLogin = ({
   emailValue,
   inputEmailHandler,
   inputPasswordHandler,
+  setIsShowKeyboard,
 }) => {
   const { passHideHandler, hidePass } = ValidateInput();
   return (
@@ -16,6 +17,7 @@ export const CommonRegisterLogin = ({
         value={emailValue}
         onChangeText={inputEmailHandler}
         style={styles.inputEmail}
+        onFocus={() => setIsShowKeyboard(true)}
       />
       <View style={styles.inputPasswordWrapper}>
         <TextInput
@@ -24,6 +26,7 @@ export const CommonRegisterLogin = ({
           onChangeText={inputPasswordHandler}
           style={styles.inputPassword}
           secureTextEntry={hidePass ? true : false}
+          onFocus={() => setIsShowKeyboard(true)}
         />
         <TouchableOpacity
           style={styles.buttonShow}
