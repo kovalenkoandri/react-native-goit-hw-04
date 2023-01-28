@@ -1,9 +1,4 @@
-import {
-  Text,
-  View,
-  TextInput,
-  Pressable,
-} from 'react-native';
+import { Text, View, TextInput, TouchableOpacity } from 'react-native';
 import { styles } from '../styles';
 import { ValidateInput } from '../helpers/ValidateInput';
 export const CommonRegisterLogin = ({
@@ -30,14 +25,13 @@ export const CommonRegisterLogin = ({
           style={styles.inputPassword}
           secureTextEntry={hidePass ? true : false}
         />
-        <Pressable
+        <TouchableOpacity
           style={styles.buttonShow}
+          activeOpacity={0.8}
           onPress={() => passHideHandler(hidePass)}
         >
-          <Text style={styles.textShow}>
-            {hidePass ? 'Show' : 'Hide'}
-          </Text>
-        </Pressable>
+          <Text style={styles.textShow}>{hidePass ? 'Show' : 'Hide'}</Text>
+        </TouchableOpacity>
       </View>
       {children}
     </>

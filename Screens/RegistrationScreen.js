@@ -4,7 +4,7 @@ import {
   ImageBackground,
   Image,
   TextInput,
-  Pressable,
+  TouchableOpacity,
   Platform,
   KeyboardAvoidingView,
 } from 'react-native';
@@ -23,9 +23,6 @@ export const RegistrationScreen = () => {
     loginValue,
   } = ValidateInput();
   return (
-    <KeyboardAvoidingView
-      behavior={Platform.OS == 'ios' ? 'padding' : null}
-    >
       <ImageBackground style={styles.bg} source={require('../assets/bg.png')}>
         <View style={[styles.container, styles.containerRegister]}>
           <Image
@@ -49,23 +46,18 @@ export const RegistrationScreen = () => {
               inputPasswordHandler,
             }}
           >
-            <Pressable
-              style={({ pressed }) => [
-                {
-                  opacity: pressed ? 0.8 : 1,
-                },
-                styles.buttonRegister,
-              ]}
+            <TouchableOpacity
+              style={styles.buttonAuth}
+              activeOpacity={0.8}
               onPress={() =>
                 submitHandler({ loginValue, emailValue, passwordValue })
               }
             >
-              <Text style={styles.textRegister}>Зарегистрироваться</Text>
-            </Pressable>
+              <Text style={styles.textAuth}>Зарегистрироваться</Text>
+            </TouchableOpacity>
             <Text style={styles.textShow}>Уже есть аккаунт? Войти</Text>
           </CommonRegisterLogin>
         </View>
       </ImageBackground>
-    </KeyboardAvoidingView>
   );
 };

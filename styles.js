@@ -6,7 +6,7 @@ export const styles = StyleSheet.create({
   },
   container: {
     alignItems: 'center',
-    marginTop: 263,
+    marginTop: 63,
     paddingTop: 32,
     flex: 1,
     width: '100%',
@@ -95,7 +95,7 @@ export const styles = StyleSheet.create({
     color: '#1B4371',
     fontFamily: 'Roboto',
   },
-  buttonRegister: {
+  buttonAuth: {
     marginBottom: 16,
     width: 343,
     height: 51,
@@ -105,7 +105,7 @@ export const styles = StyleSheet.create({
     backgroundColor: '#c678dd',
     borderRadius: 100,
   },
-  textRegister: {
+  textAuth: {
     fontSize: 16,
     fontWeight: '400',
     lineHeight: 19,

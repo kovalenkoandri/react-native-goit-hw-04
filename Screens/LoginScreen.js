@@ -2,7 +2,7 @@ import {
   Text,
   View,
   ImageBackground,
-  Pressable,
+  TouchableOpacity,
   KeyboardAvoidingView,
   Platform,
 } from 'react-native';
@@ -24,9 +24,6 @@ export const LoginScreen = () => {
         <View style={styles.logTitleWrapper}>
           <Text style={styles.authTitle}>Войти</Text>
         </View>
-        <KeyboardAvoidingView
-          behavior={Platform.OS == 'ios' ? 'padding' : null}
-        >
           <CommonRegisterLogin
             {...{
               passwordValue,
@@ -35,19 +32,14 @@ export const LoginScreen = () => {
               inputPasswordHandler,
             }}
           >
-            <Pressable
-              style={({ pressed }) => [
-                {
-                  opacity: pressed ? 0.8 : 1,
-                },
-                styles.buttonRegister,
-              ]}
+            <TouchableOpacity
+              style={styles.buttonAuth}
+              activeOpacity={0.8}
               onPress={() => submitHandler({ emailValue, passwordValue })}
             >
-              <Text style={styles.textRegister}>Войти</Text>
-            </Pressable>
+              <Text style={styles.textAuth}>Войти</Text>
+            </TouchableOpacity>
           </CommonRegisterLogin>
-        </KeyboardAvoidingView>
         <Text style={styles.textShow}>Нет аккаунта? Зарегистрироваться</Text>
       </View>
     </ImageBackground>
