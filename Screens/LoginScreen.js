@@ -17,15 +17,14 @@ export const LoginScreen = () => {
   const {
     inputEmailHandler,
     inputPasswordHandler,
-    submitHandler,
     passwordValue,
     emailValue,
+    keyboardHide,
+    setIsShowKeyboard,
+    isShowKeyboard,
   } = ValidateInput();
-const [isShowKeyboard, setIsShowKeyboard] = useState(false);
-const keyboardHide = () => {
-  Keyboard.dismiss();
-  setIsShowKeyboard(false);
-};
+
+
   return (
     <TouchableWithoutFeedback onPress={keyboardHide}>
       <View style={styles.container}>
@@ -46,17 +45,18 @@ const keyboardHide = () => {
                 inputEmailHandler,
                 inputPasswordHandler,
                 setIsShowKeyboard,
+                keyboardHide,
               }}
             >
               <TouchableOpacity
                 style={styles.buttonAuth}
                 activeOpacity={0.8}
-                onPress={() => { submitHandler({ emailValue, passwordValue }); }}
+                onPress={keyboardHide}
               >
                 <Text style={styles.textAuth}>Войти</Text>
               </TouchableOpacity>
             </CommonRegisterLogin>
-            <Text style={styles.textShow}>
+            <Text style={(styles.textShow, styles.textRoute)}>
               Нет аккаунта? Зарегистрироваться
             </Text>
           </View>

@@ -20,16 +20,13 @@ export const RegistrationScreen = () => {
     inputLoginHandler,
     inputEmailHandler,
     inputPasswordHandler,
-    submitHandler,
     passwordValue,
     emailValue,
     loginValue,
+    keyboardHide,
+    setIsShowKeyboard,
+    isShowKeyboard,
   } = ValidateInput();
-  const [isShowKeyboard, setIsShowKeyboard] = useState(false);
-  const keyboardHide = () => {
-    Keyboard.dismiss();
-    setIsShowKeyboard(false);
-  };
 
   return (
     <TouchableWithoutFeedback onPress={keyboardHide}>
@@ -62,18 +59,19 @@ export const RegistrationScreen = () => {
                 inputEmailHandler,
                 inputPasswordHandler,
                 setIsShowKeyboard,
+                keyboardHide,
               }}
             >
               <TouchableOpacity
                 style={styles.buttonAuth}
                 activeOpacity={0.8}
-                onPress={() =>
-                  submitHandler({ loginValue, emailValue, passwordValue })
-                }
+                onPress={keyboardHide}
               >
                 <Text style={styles.textAuth}>Зарегистрироваться</Text>
               </TouchableOpacity>
-              <Text style={styles.textShow}>Уже есть аккаунт? Войти</Text>
+              <Text style={(styles.textShow, styles.textRoute)}>
+                Уже есть аккаунт? Войти
+              </Text>
             </CommonRegisterLogin>
           </View>
         </ImageBackground>

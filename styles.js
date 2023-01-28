@@ -113,4 +113,7 @@ export const styles = StyleSheet.create({
     color: '#fff',
     fontFamily: 'Roboto',
   },
+  textRoute: {
+    marginBottom: 90,
+  },
 });
