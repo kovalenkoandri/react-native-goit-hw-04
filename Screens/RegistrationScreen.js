@@ -9,13 +9,14 @@ import {
   KeyboardAvoidingView,
   TouchableWithoutFeedback,
   Keyboard,
+  Button,
 } from 'react-native';
 import { useState } from 'react';
 import { styles } from '../styles';
 import { ValidateInput } from '../helpers/ValidateInput';
 import { CommonRegisterLogin } from '../helpers/CommonRegisterLogin';
 
-export const RegistrationScreen = () => {
+export const RegistrationScreen = ({navigation}) => {
   const {
     inputLoginHandler,
     inputEmailHandler,
@@ -64,6 +65,7 @@ export const RegistrationScreen = () => {
                 inputPasswordHandler,
                 setIsShowKeyboard,
                 keyboardHide,
+                width,
               }}
             >
               <TouchableOpacity
@@ -73,7 +75,10 @@ export const RegistrationScreen = () => {
               >
                 <Text style={styles.textAuth}>Зарегистрироваться</Text>
               </TouchableOpacity>
-              <Text style={(styles.textShow, styles.textRoute)}>
+              <Text
+                style={(styles.textShow, styles.textRoute)}
+                onPress={() => navigation.navigate('Login')}
+              >
                 Уже есть аккаунт? Войти
               </Text>
             </CommonRegisterLogin>

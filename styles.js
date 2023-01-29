@@ -115,6 +115,7 @@ export const styles = StyleSheet.create({
     fontFamily: 'RobotoItalic',
   },
   textRoute: {
+    color: '#fff',
     marginBottom: 90,
   },
 });

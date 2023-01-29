@@ -21,15 +21,15 @@ export const ValidateInput = () => {
     setPasswordValue('');
   };
   const [width, setWidth] = useState(Dimensions.get('window').width - 20 * 2);
-  useEffect(() => {
-    const onChange = () => {
-      setWidth(Dimensions.get('window').width - 20 * 2);
-    };
-    Dimensions.addEventListener('change', onChange);
-    return () => {
-      Dimensions.removeEventListener('change', onChange);
-    };
-  }, []);
+ useEffect(() => {
+   const subscription = Dimensions.addEventListener(
+     'change',
+     () => {
+        setWidth(Dimensions.get('window').width - 20 * 2);
+     },
+   );
+   return () => subscription?.remove();
+ });
   return {
     inputLoginHandler,
     inputEmailHandler,
