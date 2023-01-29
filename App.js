@@ -4,11 +4,20 @@ import React, { useEffect, useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import * as Font from 'expo-font';
+import {
+  KeyboardAvoidingView,
+  Platform,
+  TouchableWithoutFeedback,
+  View,
+  ImageBackground,
+} from 'react-native';
+import { ValidateInput } from './helpers/ValidateInput';
+import { styles } from './styles';
 
 export default function App() {
   const [appIsReady, setAppIsReady] = useState(false);
   const Stack = createNativeStackNavigator();
-
+  const { keyboardHide, isShowKeyboard } = ValidateInput();
   useEffect(() => {
     async function prepare() {
       try {
@@ -30,6 +39,22 @@ export default function App() {
     return null;
   }
 
+  return (
+    <TouchableWithoutFeedback onPress={keyboardHide}>
+      <View style={styles.container}>
+        <ImageBackground style={styles.bg} source={require('./assets/bg.png')}>
+          <View
+            style={{
+              ...styles.form,
+              marginBottom: isShowKeyboard ? -110 : 0,
+            }}
+          >
+            <LoginScreen></LoginScreen>
+          </View>
+        </ImageBackground>
+      </View>
+    </TouchableWithoutFeedback>
+  );
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
