@@ -85,7 +85,7 @@ export const styles = StyleSheet.create({
     width: 80,
     height: 50,
     marginLeft: 256,
-    alignItems: 'center',
+    alignSelf: 'flex-end',
     justifyContent: 'center',
     backgroundColor: 'transparent',
   },

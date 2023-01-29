@@ -8,6 +8,7 @@ export const CommonRegisterLogin = ({
   inputEmailHandler,
   inputPasswordHandler,
   setIsShowKeyboard,
+  width,
 }) => {
   const { passHideHandler, hidePass } = ValidateInput();
   return (
@@ -16,15 +17,26 @@ export const CommonRegisterLogin = ({
         placeholder="Адрес электронной почты"
         value={emailValue}
         onChangeText={inputEmailHandler}
-        style={styles.inputEmail}
+        style={{
+          ...styles.inputEmail,
+          width,
+        }}
         onFocus={() => setIsShowKeyboard(true)}
       />
-      <View style={styles.inputPasswordWrapper}>
+      <View
+        style={{
+          ...styles.inputPasswordWrapper,
+          width,
+        }}
+      >
         <TextInput
           placeholder="Пароль"
           value={passwordValue}
           onChangeText={inputPasswordHandler}
-          style={styles.inputPassword}
+          style={{
+            ...styles.inputPassword,
+            width,
+          }}
           secureTextEntry={hidePass ? true : false}
           onFocus={() => setIsShowKeyboard(true)}
         />

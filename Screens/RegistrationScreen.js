@@ -26,6 +26,7 @@ export const RegistrationScreen = () => {
     keyboardHide,
     setIsShowKeyboard,
     isShowKeyboard,
+    width,
   } = ValidateInput();
 
   return (
@@ -49,7 +50,10 @@ export const RegistrationScreen = () => {
               placeholder="Логин"
               value={loginValue}
               onChangeText={inputLoginHandler}
-              style={styles.inputLogin}
+              style={{
+                ...styles.inputLogin,
+                width,
+              }}
               onFocus={() => setIsShowKeyboard(true)}
             />
             <CommonRegisterLogin

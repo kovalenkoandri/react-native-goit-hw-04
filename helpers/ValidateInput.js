@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Keyboard } from 'react-native';
+import { Dimensions } from 'react-native';
 
 export const ValidateInput = () => {
   const [loginValue, setLoginValue] = useState('');
@@ -19,6 +20,16 @@ export const ValidateInput = () => {
     setEmailValue('');
     setPasswordValue('');
   };
+  const [width, setWidth] = useState(Dimensions.get('window').width - 20 * 2);
+  useEffect(() => {
+    const onChange = () => {
+      setWidth(Dimensions.get('window').width - 20 * 2);
+    };
+    Dimensions.addEventListener('change', onChange);
+    return () => {
+      Dimensions.removeEventListener('change', onChange);
+    };
+  }, []);
   return {
     inputLoginHandler,
     inputEmailHandler,
@@ -31,5 +42,6 @@ export const ValidateInput = () => {
     keyboardHide,
     setIsShowKeyboard,
     isShowKeyboard,
+    width,
   };
 };

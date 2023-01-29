@@ -22,8 +22,8 @@ export const LoginScreen = () => {
     keyboardHide,
     setIsShowKeyboard,
     isShowKeyboard,
+    width,
   } = ValidateInput();
-
 
   return (
     <TouchableWithoutFeedback onPress={keyboardHide}>
@@ -46,6 +46,7 @@ export const LoginScreen = () => {
                 inputPasswordHandler,
                 setIsShowKeyboard,
                 keyboardHide,
+                width,
               }}
             >
               <TouchableOpacity
