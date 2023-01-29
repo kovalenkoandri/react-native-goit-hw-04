@@ -14,7 +14,7 @@ import { ValidateInput } from '../helpers/ValidateInput';
 import { CommonRegisterLogin } from '../helpers/CommonRegisterLogin';
 import { WrapperAuth } from '../helpers/WrapperAuth';
 
-export const LoginScreen = ({navigation}) => {
+export const LoginScreen = ({ navigation }) => {
   const {
     inputEmailHandler,
     inputPasswordHandler,

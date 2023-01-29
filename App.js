@@ -12,6 +12,7 @@ import {
   ImageBackground,
 } from 'react-native';
 import { ValidateInput } from './helpers/ValidateInput';
+import { WrapperAuth } from './helpers/WrapperAuth';
 import { styles } from './styles';
 
 export default function App() {
@@ -39,22 +40,6 @@ export default function App() {
     return null;
   }
 
-  return (
-    <TouchableWithoutFeedback onPress={keyboardHide}>
-      <View style={styles.container}>
-        <ImageBackground style={styles.bg} source={require('./assets/bg.png')}>
-          <View
-            style={{
-              ...styles.form,
-              marginBottom: isShowKeyboard ? -110 : 0,
-            }}
-          >
-            <LoginScreen></LoginScreen>
-          </View>
-        </ImageBackground>
-      </View>
-    </TouchableWithoutFeedback>
-  );
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
