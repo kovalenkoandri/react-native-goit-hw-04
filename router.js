@@ -9,7 +9,7 @@ const MainTab = createBottomTabNavigator();
 import { LoginScreen } from './Screens/auth/LoginScreen';
 import { RegistrationScreen } from './Screens/auth/RegistrationScreen';
 import PostsScreen from './Screens/mainScreen/PostsScreen';
-import CreateScreen from './Screens/mainScreen/CreateScreen';
+import CreateScreen from './Screens/mainScreen/CreatePostsScreen';
 import ProfileScreen from './Screens/mainScreen/ProfileScreen';
 
 // icons import
