@@ -13,6 +13,7 @@ import { styles } from '../../styles';
 import { ValidateInput } from '../../helpers/ValidateInput';
 import { CommonRegisterLogin } from '../../helpers/CommonRegisterLogin';
 import { WrapperAuth } from '../../helpers/WrapperAuth';
+import React from 'react';
 
 export const LoginScreen = ({ navigation }) => {
   const {
@@ -44,7 +45,8 @@ export const LoginScreen = ({ navigation }) => {
         <TouchableOpacity
           style={styles.buttonAuth}
           activeOpacity={0.8}
-          onPress={keyboardHide}
+          // onPress={keyboardHide}
+          onPress={()=> navigation.navigate('Home')}
         >
           <Text style={styles.textAuth}>Войти</Text>
         </TouchableOpacity>

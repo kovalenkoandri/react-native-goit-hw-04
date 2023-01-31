@@ -64,7 +64,7 @@ export const RegistrationScreen = ({ navigation }) => {
           style={styles.buttonAuth}
           activeOpacity={0.8}
           // onPress={keyboardHide}
-          onPress={() => navigation.navigate('Posts')}
+          onPress={() => navigation.navigate('Home')}
         >
           <Text style={styles.textAuth}>Зарегистрироваться</Text>
         </TouchableOpacity>
