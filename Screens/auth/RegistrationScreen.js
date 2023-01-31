@@ -11,10 +11,10 @@ import {
   Keyboard,
 } from 'react-native';
 import { useState } from 'react';
-import { styles } from '../styles';
-import { ValidateInput } from '../helpers/ValidateInput';
-import { CommonRegisterLogin } from '../helpers/CommonRegisterLogin';
-import { WrapperAuth } from '../helpers/WrapperAuth';
+import { styles } from '../../styles';
+import { ValidateInput } from '../../helpers/ValidateInput';
+import { CommonRegisterLogin } from '../../helpers/CommonRegisterLogin';
+import { WrapperAuth } from '../../helpers/WrapperAuth';
 
 export const RegistrationScreen = ({ navigation }) => {
   const {
@@ -33,7 +33,7 @@ export const RegistrationScreen = ({ navigation }) => {
   return (
     <WrapperAuth>
       <Image
-        source={require('../assets/addPhoto.png')}
+        source={require('../../assets/addPhoto.png')}
         style={styles.addPhoto}
       />
       <View style={styles.regTitleWrapper}>

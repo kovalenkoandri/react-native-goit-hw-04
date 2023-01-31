@@ -1,5 +1,4 @@
-import { LoginScreen } from './Screens/LoginScreen';
-import { RegistrationScreen } from './Screens/RegistrationScreen';
+
 import React, { useEffect, useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -14,10 +13,11 @@ import {
 import { ValidateInput } from './helpers/ValidateInput';
 import { WrapperAuth } from './helpers/WrapperAuth';
 import { styles } from './styles';
+import { useRoute } from './router';
 
 export default function App() {
   const [appIsReady, setAppIsReady] = useState(false);
-  const Stack = createNativeStackNavigator();
+  const routing = useRoute(true);
   const { keyboardHide, isShowKeyboard } = ValidateInput();
   useEffect(() => {
     async function prepare() {
@@ -36,28 +36,6 @@ export default function App() {
     prepare();
   }, []);
 
-  if (!appIsReady) {
-    return null;
-  }
-
-  return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen
-          name="Login"
-          component={LoginScreen}
-          options={{
-            headerShown: false,
-          }}
-        />
-        <Stack.Screen
-          name="Registration"
-          component={RegistrationScreen}
-          options={{
-            headerShown: false,
-          }}
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
+  return <NavigationContainer>{routing}</NavigationContainer>;
+  
 }

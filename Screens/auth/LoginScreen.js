@@ -9,10 +9,10 @@ import {
   Keyboard,
 } from 'react-native';
 import { useState } from 'react';
-import { styles } from '../styles';
-import { ValidateInput } from '../helpers/ValidateInput';
-import { CommonRegisterLogin } from '../helpers/CommonRegisterLogin';
-import { WrapperAuth } from '../helpers/WrapperAuth';
+import { styles } from '../../styles';
+import { ValidateInput } from '../../helpers/ValidateInput';
+import { CommonRegisterLogin } from '../../helpers/CommonRegisterLogin';
+import { WrapperAuth } from '../../helpers/WrapperAuth';
 
 export const LoginScreen = ({ navigation }) => {
   const {
