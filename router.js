@@ -15,6 +15,7 @@ import ProfileScreen from './Screens/mainScreen/ProfileScreen';
 // icons import
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
+import { MaterialIcons } from '@expo/vector-icons';
 
 export const useRoute = (isAuth) => {
   if (!isAuth) {
@@ -48,6 +49,12 @@ export const useRoute = (isAuth) => {
               color={color}
             />
           ),
+          headerRight: ({ focused, size, color }) => (
+            <MaterialIcons name="logout" size={24} color="grey" />
+          ),
+          headerRightContainerStyle: {
+            paddingRight: 20,
+          },
         }}
         name="Posts"
         component={PostsScreen}
