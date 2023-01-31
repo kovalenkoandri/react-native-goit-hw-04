@@ -53,7 +53,8 @@ export const LoginScreen = ({ navigation }) => {
         onPress={() => navigation.navigate('Registration')}
         style={(styles.textShow, styles.textRoute)}
       >
-        Нет аккаунта? Зарегистрироваться
+        Нет аккаунта?
+        <Text style={styles.textRouteInner}> Зарегистрироваться</Text>
       </Text>
     </WrapperAuth>
   );

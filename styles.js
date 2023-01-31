@@ -3,7 +3,6 @@ import { StyleSheet, Platform } from 'react-native';
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    fontFamily: 'RobotoItalic',
   },
   bg: {
     flex: 1,
@@ -116,6 +115,10 @@ export const styles = StyleSheet.create({
   },
   textRoute: {
     color: '#fff',
-    marginBottom: 90,
+    // marginBottom: 90,
+  },
+  textRouteInner: {
+    fontSize: 20,
+    color: '#ff6347',
   },
 });

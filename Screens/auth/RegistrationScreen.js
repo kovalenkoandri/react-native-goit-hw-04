@@ -63,7 +63,8 @@ export const RegistrationScreen = ({ navigation }) => {
         <TouchableOpacity
           style={styles.buttonAuth}
           activeOpacity={0.8}
-          onPress={keyboardHide}
+          // onPress={keyboardHide}
+          onPress={() => navigation.navigate('Posts')}
         >
           <Text style={styles.textAuth}>Зарегистрироваться</Text>
         </TouchableOpacity>
@@ -71,7 +72,7 @@ export const RegistrationScreen = ({ navigation }) => {
           style={(styles.textShow, styles.textRoute)}
           onPress={() => navigation.navigate('Login')}
         >
-          Уже есть аккаунт? Войти
+          Уже есть аккаунт?<Text style={styles.textRouteInner}> Войти</Text>
         </Text>
       </CommonRegisterLogin>
     </WrapperAuth>
