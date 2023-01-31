@@ -12,13 +12,13 @@ export const ValidateInput = () => {
   const inputEmailHandler = (text) => setEmailValue(text);
   const inputPasswordHandler = (text) => setPasswordValue(text);
   const passHideHandler = (hidePass) => setHidePass(!hidePass);
-  const keyboardHide = () => {
+  const keyboardHide = ({ navigation }) => {
     Keyboard.dismiss();
     setIsShowKeyboard(false);
     console.log(loginValue, emailValue, passwordValue);
-    setLoginValue('');
-    setEmailValue('');
-    setPasswordValue('');
+    // setLoginValue('');
+    // setEmailValue('');
+    // setPasswordValue('');
   };
   const [width, setWidth] = useState(Dimensions.get('window').width - 20 * 2);
  useEffect(() => {

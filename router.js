@@ -18,7 +18,7 @@ import { AntDesign } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
 
 export const useRoute = (isAuth) => {
-  if (!isAuth) {
+  if (isAuth) {
     return (
       <AuthStack.Navigator>
         <AuthStack.Screen
@@ -32,7 +32,7 @@ export const useRoute = (isAuth) => {
           options={{
             headerShown: false,
           }}
-          name="Register"
+          name="Registration"
           component={RegistrationScreen}
         />
       </AuthStack.Navigator>
