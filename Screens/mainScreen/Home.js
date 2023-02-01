@@ -33,7 +33,7 @@ const Home = ({ navigation }) => {
           },
           headerTitleAlign: 'center',
         }}
-        name="Posts"
+        name="Публикации"
         component={PostsScreen}
       />
       <MainTab.Screen
@@ -43,7 +43,7 @@ const Home = ({ navigation }) => {
           ),
           headerTitleAlign: 'center',
         }}
-        name="Create"
+        name="Создать публикацию"
         component={CreateScreen}
       />
       <MainTab.Screen
@@ -57,7 +57,7 @@ const Home = ({ navigation }) => {
           ),
           headerTitleAlign: 'center',
         }}
-        name="Profile"
+        name="Профиль"
         component={ProfileScreen}
       />
     </MainTab.Navigator>

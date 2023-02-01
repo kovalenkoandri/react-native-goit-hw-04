@@ -1,14 +1,15 @@
+import { useFocusEffect } from '@react-navigation/native';
 import React from 'react';
-import { View, Text, StyleSheet, ImageBackground } from 'react-native';
+import { View, Text, StyleSheet, Image } from 'react-native';
 
 const PostsScreen = () => {
   return (
     <View style={styles.container}>
       <View style={styles.PostsScreenUserOuter}>
-        <ImageBackground
+        <Image
           style={styles.PostsScreenUserPhoto}
           source={require('../../assets/user.png')}
-        ></ImageBackground>
+        />
         <View style={styles.PostsScreenUserContacts}>
           <Text style={styles.PostsScreenUserName}>Natali Romanova</Text>
           <Text style={styles.PostsScreenUserEmail}>email@example.com</Text>
@@ -20,9 +21,12 @@ const PostsScreen = () => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     paddingHorizontal: 16,
     paddingTop: 32,
+    backgroundColor: '#fff',
+    height: '100%',
+    borderWidth: 1,
+    borderColor: 'rgba(0, 0, 0, 0.3)',
   },
   PostsScreenUserOuter: {
     alignItems: 'center',
