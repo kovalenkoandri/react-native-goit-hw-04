@@ -6,20 +6,18 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
+import { View, Image, Text } from 'react-native';
+import SvgCreate from '../../helpers/SvgCreate';
+import SvgPosts from '../../helpers/SvgPosts';
+import SvgProfile from '../../helpers/SvgProfile';
 const MainTab = createBottomTabNavigator();
 
 const Home = ({ navigation }) => {
   return (
-    <MainTab.Navigator screenOptions={{ showLabel: false }}>
+    <MainTab.Navigator screenOptions={{ tabBarShowLabel: false }}>
       <MainTab.Screen
         options={{
-          tabBarIcon: ({ focused, size, color }) => (
-            <MaterialCommunityIcons
-              name="postage-stamp"
-              size={size}
-              color={color}
-            />
-          ),
+          tabBarIcon: ({ focused, size, color }) => <SvgPosts />,
           headerRight: ({ focused, size, color }) => (
             <MaterialIcons
               name="logout"
@@ -38,9 +36,7 @@ const Home = ({ navigation }) => {
       />
       <MainTab.Screen
         options={{
-          tabBarIcon: ({ focused, size, color }) => (
-            <AntDesign name="pluscircleo" size={size} color={color} />
-          ),
+          tabBarIcon: ({ focused, size, color }) => <SvgCreate />,
           headerTitleAlign: 'center',
         }}
         name="Создать публикацию"
@@ -48,13 +44,7 @@ const Home = ({ navigation }) => {
       />
       <MainTab.Screen
         options={{
-          tabBarIcon: ({ focused, size, color }) => (
-            <MaterialCommunityIcons
-              name="face-man-profile"
-              size={size}
-              color={color}
-            />
-          ),
+          tabBarIcon: ({ focused, size, color }) => <SvgProfile />,
           headerTitleAlign: 'center',
         }}
         name="Профиль"
