@@ -13,7 +13,8 @@ import SvgPosts from '../../helpers/SvgPosts';
 import SvgProfileFocused from '../../helpers/SvgProfileFocused';
 import SvgProfileUnfocused from '../../helpers/SvgProfileUnfocused';
 import SvgTrashBin from '../../helpers/SvgTrashBin';
-
+import SvgGoBack from '../../helpers/SvgGoBack';
+import { HeaderBackButton } from '@react-navigation/elements';
 
 const MainTab = createBottomTabNavigator();
 
@@ -47,8 +48,14 @@ const Home = ({ navigation }) => {
       />
       <MainTab.Screen
         options={{
-          tabBarIcon: ({ focused, size, color }) => <SvgTrashBin/>,
+          tabBarIcon: () => <SvgTrashBin />,
           headerTitleAlign: 'center',
+          headerLeft: () => (
+            <HeaderBackButton
+              onPress={() => navigation.navigate('Публикации')}
+              backImage={() => <SvgGoBack />}
+            />
+          ),
         }}
         name="Создать публикацию"
         component={CreateScreen}
@@ -58,7 +65,6 @@ const Home = ({ navigation }) => {
           tabBarIcon: ({ focused, size, color }) => {
             if (focused === true) {
               focusFlag = false;
-              console.log(focusFlag);
               return <SvgProfileFocused />;
             }
             return <SvgProfileUnfocused />;
