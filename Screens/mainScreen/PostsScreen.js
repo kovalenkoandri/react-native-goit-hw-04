@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     resizeMode: 'cover',
   },
   PostsScreenUserName: {
-    fontFamily: 'RobotoItalic',
+    fontFamily: 'RobotoRegular',
     fontStyle: 'Bold',
     fontSize: 13,
     lineHeight: 15,
@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
     color: '#212121',
   },
   PostsScreenUserEmail: {
-    fontFamily: 'RobotoItalic',
+    fontFamily: 'RobotoRegular',
     fontStyle: 'Regular',
     fontSize: 11,
     lineHeight: 13,

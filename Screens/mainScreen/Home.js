@@ -6,7 +6,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
-import { View, Image, Text, TouchableOpacity} from 'react-native';
+import { View, Image, Text, TouchableOpacity } from 'react-native';
 import SvgCreateFocused from '../../helpers/SvgCreateFocused';
 import SvgCreateUnfocused from '../../helpers/SvgCreateUnfocused';
 import SvgPosts from '../../helpers/SvgPosts';

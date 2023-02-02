@@ -31,7 +31,7 @@ export const styles = StyleSheet.create({
     marginBottom: 33,
   },
   authTitle: {
-    fontFamily: 'RobotoItalic',
+    fontFamily: 'RobotoRegular',
     fontSize: 30,
     lineHeight: 35,
     color: '#212121',
@@ -93,7 +93,7 @@ export const styles = StyleSheet.create({
     lineHeight: 19,
     letterSpacing: 0.25,
     color: '#1B4371',
-    fontFamily: 'RobotoItalic',
+    fontFamily: 'RobotoRegular',
   },
   buttonAuth: {
     marginBottom: 16,
@@ -111,7 +111,7 @@ export const styles = StyleSheet.create({
     lineHeight: 19,
     letterSpacing: 0.25,
     color: '#fff',
-    fontFamily: 'RobotoItalic',
+    fontFamily: 'RobotoRegular',
   },
   textRoute: {
     color: '#fff',
