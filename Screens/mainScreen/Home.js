@@ -6,7 +6,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
-import { View, Image, Text } from 'react-native';
+import { View, Image, Text, TouchableOpacity} from 'react-native';
 import SvgCreateFocused from '../../helpers/SvgCreateFocused';
 import SvgCreateUnfocused from '../../helpers/SvgCreateUnfocused';
 import SvgPosts from '../../helpers/SvgPosts';
@@ -14,6 +14,7 @@ import SvgProfileFocused from '../../helpers/SvgProfileFocused';
 import SvgProfileUnfocused from '../../helpers/SvgProfileUnfocused';
 import SvgTrashBin from '../../helpers/SvgTrashBin';
 import SvgGoBack from '../../helpers/SvgGoBack';
+import SvgLogout from '../../helpers/SvgLogout';
 import { HeaderBackButton } from '@react-navigation/elements';
 
 const MainTab = createBottomTabNavigator();
@@ -30,13 +31,10 @@ const Home = ({ navigation }) => {
             }
             return <SvgPosts />;
           },
-          headerRight: ({ focused, size, color }) => (
-            <MaterialIcons
-              name="logout"
-              size={24}
-              color="grey"
-              onPress={() => navigation.navigate('Login')}
-            />
+          headerRight: () => (
+            <TouchableOpacity onPress={() => navigation.navigate('Login')}>
+              <SvgLogout />
+            </TouchableOpacity>
           ),
           headerRightContainerStyle: {
             paddingRight: 20,
