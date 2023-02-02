@@ -1,6 +1,7 @@
 import React from 'react';
 import PostsScreen from './PostsScreen';
 import CreateScreen from './CreatePostsScreen';
+import CreatePostsScreenCompleted from './CreatePostsScreenCompleted';
 import ProfileScreen from './ProfileScreen';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
@@ -56,7 +57,8 @@ const Home = ({ navigation }) => {
           ),
         }}
         name="Создать публикацию"
-        component={CreateScreen}
+        // component={CreateScreen}
+        component={CreatePostsScreenCompleted}
       />
       <MainTab.Screen
         options={{
