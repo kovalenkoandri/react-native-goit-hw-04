@@ -1,17 +1,22 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import SvgLocationMark from '../../helpers/SvgLocationMark';
 
 const CreatePostsScreen = () => {
   return (
-    <View style={styles.container}>
-      <View style={styles.photoLayout}></View>
-      <Text style={styles.textLoadPhoto}>Загрузите фото</Text>
+    <View style={styles.CreatePostsScreenContainer}>
+      <View style={styles.CreatePostsScreenLoadPhoto}></View>
+      <Text style={styles.CreatePostsScreenTextLoadPhoto}>Загрузите фото</Text>
+      <Text style={styles.CreatePostsScreenPhotoName}>Название...</Text>
+      <View>
+        <SvgLocationMark style={styles.CreatePostsScreenLocation} />
+      </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
+  CreatePostsScreenContainer: {
     paddingHorizontal: 16,
     paddingTop: 32,
     backgroundColor: '#fff',
@@ -19,21 +24,39 @@ const styles = StyleSheet.create({
     borderTopWidth: 1,
     borderColor: 'rgba(0, 0, 0, 0.3)',
   },
-  photoLayout: {
+  CreatePostsScreenLoadPhoto: {
     backgroundColor: '#F6F6F6',
-    width: '100%',
     height: 240,
     borderWidth: 1,
     borderColor: '#E8E8E8',
     borderRadius: 8,
     marginBottom: 8,
   },
-  textLoadPhoto: {
+  CreatePostsScreenTextLoadPhoto: {
     fontFamily: 'RobotoRegular',
     fontStyle: 'normal',
     fontSize: 16,
     lineHeight: 19,
     color: '#BDBDBD',
+    marginBottom: 48,
+  },
+  CreatePostsScreenPhotoName: {
+    fontFamily: 'RobotoRegular',
+    fontStyle: 'normal',
+    fontSize: 16,
+    lineHeight: 19,
+    color: '#BDBDBD',
+    marginBottom: 15,
+  },
+  CreatePostsScreenWrapperLocation: {
+    borderTopWidth: 1,
+    borderBottomWidth: 1,
+    borderColor: '#E8E8E8',
+    height: 66,
+    marginBottom: 32,
+  },
+  CreatePostsScreenLocation: {
+    
   },
 });
 
