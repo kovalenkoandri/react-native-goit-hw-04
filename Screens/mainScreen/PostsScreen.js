@@ -1,4 +1,3 @@
-import { useFocusEffect } from '@react-navigation/native';
 import React from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native';
 
@@ -10,7 +9,7 @@ const PostsScreen = () => {
           style={styles.PostsScreenUserPhoto}
           source={require('../../assets/user.png')}
         />
-        <View style={styles.PostsScreenUserContacts}>
+        <View>
           <Text style={styles.PostsScreenUserName}>Natali Romanova</Text>
           <Text style={styles.PostsScreenUserEmail}>email@example.com</Text>
         </View>
