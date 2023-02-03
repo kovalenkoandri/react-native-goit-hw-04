@@ -1,21 +1,36 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  ImageBackground,
+} from 'react-native';
 import SvgLocationMark from '../../helpers/SvgLocationMark';
+import SvgCreatePhotoIcon from '../../helpers/SvgCreatePhotoIcon';
 
 const CreatePostsScreenCompleted = ({ navigation }) => {
   return (
     <View style={styles.CreatePostsScreenContainer}>
       <View style={styles.CreatePostsScreenLoadPhotoBg}>
-        <Image
+        <ImageBackground
           style={styles.CreatePostsScreenImg}
           source={require('../../assets/forest.png')}
-        />
+        >
+          <View style={styles.CreatePostsScreenLoadPhotoIconCircle}>
+            <SvgCreatePhotoIcon fill={'#FFFFFF'} />
+          </View>
+        </ImageBackground>
       </View>
-      <Text style={styles.CreatePostsScreenTextLoadPhoto}>Загрузите фото</Text>
-      <Text style={styles.CreatePostsScreenPhotoName}>Название...</Text>
+      <Text style={styles.CreatePostsScreenTextLoadPhoto}>
+        Редактировать фото
+      </Text>
+      <Text style={styles.CreatePostsScreenPhotoName}>Лес</Text>
       <View style={styles.CreatePostsScreenWrapperLocation}>
         <SvgLocationMark />
-        <Text style={styles.CreatePostsScreenLocationName}>Местность...</Text>
+        <Text style={styles.CreatePostsScreenLocationName}>
+          Ivano-Frankivs'k Region, Ukraine
+        </Text>
       </View>
       <TouchableOpacity
         style={styles.CreatePostsScreenButtonPublish}
@@ -49,19 +64,21 @@ const styles = StyleSheet.create({
   },
   CreatePostsScreenImg: {
     width: '100%',
+    height: '100%',
     resizeMode: 'cover',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   CreatePostsScreenLoadPhotoIconCircle: {
     width: 60,
     height: 60,
     borderRadius: 30,
-    backgroundColor: '#fff',
+    backgroundColor: '#FFFFFF4D',
     alignItems: 'center',
     justifyContent: 'center',
   },
   CreatePostsScreenTextLoadPhoto: {
     fontFamily: 'RobotoRegular',
-    fontStyle: 'normal',
     fontSize: 16,
     lineHeight: 19,
     color: '#BDBDBD',
@@ -69,10 +86,10 @@ const styles = StyleSheet.create({
   },
   CreatePostsScreenPhotoName: {
     fontFamily: 'RobotoRegular',
-    fontStyle: 'normal',
     fontSize: 16,
     lineHeight: 19,
-    color: '#BDBDBD',
+    color: '#212121',
+    fontWeight: '500',
     marginBottom: 15,
   },
   CreatePostsScreenWrapperLocation: {
@@ -86,10 +103,9 @@ const styles = StyleSheet.create({
   },
   CreatePostsScreenLocationName: {
     fontFamily: 'RobotoRegular',
-    fontStyle: 'normal',
     fontSize: 16,
     lineHeight: 19,
-    color: '#BDBDBD',
+    color: '#212121',
     marginLeft: 8,
   },
   CreatePostsScreenButtonPublish: {
@@ -101,7 +117,6 @@ const styles = StyleSheet.create({
   },
   CreatePostsScreenTextPublish: {
     fontFamily: 'RobotoRegular',
-    fontStyle: 'normal',
     fontSize: 16,
     lineHeight: 19,
     color: '#fff',

@@ -57,7 +57,6 @@ const styles = StyleSheet.create({
   },
   CreatePostsScreenTextLoadPhoto: {
     fontFamily: 'RobotoRegular',
-    fontStyle: 'normal',
     fontSize: 16,
     lineHeight: 19,
     color: '#BDBDBD',
@@ -65,7 +64,6 @@ const styles = StyleSheet.create({
   },
   CreatePostsScreenPhotoName: {
     fontFamily: 'RobotoRegular',
-    fontStyle: 'normal',
     fontSize: 16,
     lineHeight: 19,
     color: '#BDBDBD',
@@ -82,7 +80,6 @@ const styles = StyleSheet.create({
   },
   CreatePostsScreenLocationName: {
     fontFamily: 'RobotoRegular',
-    fontStyle: 'normal',
     fontSize: 16,
     lineHeight: 19,
     color: '#BDBDBD',
@@ -97,7 +94,6 @@ const styles = StyleSheet.create({
   },
   CreatePostsScreenTextPublish: {
     fontFamily: 'RobotoRegular',
-    fontStyle: 'normal',
     fontSize: 16,
     lineHeight: 19,
     color: '#BDBDBD',
