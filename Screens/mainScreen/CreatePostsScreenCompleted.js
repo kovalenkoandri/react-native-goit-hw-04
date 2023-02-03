@@ -61,6 +61,7 @@ const styles = StyleSheet.create({
     marginBottom: 8,
     alignItems: 'center',
     justifyContent: 'center',
+    overflow: 'hidden',
   },
   CreatePostsScreenImg: {
     width: '100%',
